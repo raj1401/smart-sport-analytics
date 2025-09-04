@@ -7,6 +7,7 @@ or on a video file and save an annotated video.
 import glob, os, cv2
 from ultralytics import YOLO
 
+
 def run_inference(model_path, source_dir, out_path, imgsz=1280, fps=25):
     # Load model
     model = YOLO(model_path)

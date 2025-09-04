@@ -6,6 +6,7 @@ from tracking_inference import run_inference_video
 from track_players import track_players_video, crop_track_video
 from pose_estimation import run_openpose_video
 
+
 # Helper to save uploaded file to temp
 def save_uploaded_file(uploaded_file):
     temp_dir = os.path.join("temp")
@@ -38,6 +39,8 @@ def on_file_upload():
     st.session_state.tracked_individuals_path = None
     st.session_state.tracks_json_path = None
     st.session_state.crop_out_path = None
+
+
 
 uploaded_file = st.file_uploader("Upload a video file", type=["mp4"], on_change=on_file_upload)
 

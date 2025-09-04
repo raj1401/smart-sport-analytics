@@ -7,6 +7,7 @@ import cv2, json, os
 import numpy as np
 from ultralytics import YOLO
 
+
 def track_players_video(
     model_path: str,
     video_path: str,
