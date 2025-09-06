@@ -16,6 +16,8 @@ videos/
 track_videos/
 temp/
 runs/
+outputs/
+checkpoints/
 
 # Utilities
 openpose/
