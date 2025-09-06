@@ -34,8 +34,8 @@ if "crop_out_path" not in st.session_state:
     st.session_state.crop_out_path = None
 if "sam2_output_path" not in st.session_state:
     st.session_state.sam2_output_path = None
-# if "sam2_max_frames" not in st.session_state:
-#     st.session_state.sam2_max_frames = 125
+if "sam2_max_frames" not in st.session_state:
+    st.session_state.sam2_max_frames = 125
 
 # Reset cached paths if a new file is uploaded
 def on_file_upload():
@@ -96,13 +96,12 @@ def on_run_sam2_analysis():
 
 if st.session_state.uploaded_video_path:
     st.markdown("<h2 style='text-align: center;'>SAM 2.1 Analysis</h2>", unsafe_allow_html=True)
-    st.number_input(
+    st.session_state.sam2_max_frames = st.number_input(
         "Max frames",
         min_value=1,
         max_value=10000,
         value=st.session_state.sam2_max_frames,
-        step=1,
-        key="sam2_max_frames",
+        step=1
     )
     st.button("Run SAM 2.1 Analysis", on_click=on_run_sam2_analysis, use_container_width=True)
     if st.session_state.sam2_output_path:
