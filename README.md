@@ -6,7 +6,7 @@ Smart Sport Analytics is a computer vision application designed to analyze sport
 
 ## Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xQyL53d1Xtg?si=0bck3WRQ-7Jiysnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Please find the demo video [here](https://youtu.be/xQyL53d1Xtg). Note that the loading times for running YOLO, ByteTrack, and SAM 2 are much longer than what it appears in the demo video. For brevity, I cut out the loading times.
 
 ## Technologies Used
 
