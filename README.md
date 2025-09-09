@@ -4,6 +4,10 @@
 
 Smart Sport Analytics is a computer vision application designed to analyze sports videos, specifically soccer, by tracking players and the ball, estimating individual player poses, and providing visual insights. The app enables users to upload a video, run tracking and pose estimation, and visualize results interactively.
 
+## Demo
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xQyL53d1Xtg?si=0bck3WRQ-7Jiysnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Technologies Used
 
 - Python 3.8+
@@ -11,40 +15,11 @@ Smart Sport Analytics is a computer vision application designed to analyze sport
 - OpenCV (video processing)
 - Ultralytics YOLOv8 (object detection and tracking)
 - ByteTrack (multi-object tracking)
+- Sam 2.1 (Segment Anything)
 - OpenPose (pose estimation)
 - Other dependencies: numpy, json, pathlib
 
 ## Installation
-
-### 1. Install SAM 2 (Segment Anything Model v2)
-
-Follow the official instructions from Facebook Research:
-
-```
-git clone https://github.com/facebookresearch/sam2.git
-cd sam2
-pip install -e .
-```
-
-See the [SAM 2 GitHub page](https://github.com/facebookresearch/sam2) for details and troubleshooting.
-
-### 2. Download SAM 2.1 Small Model Checkpoint
-
-Create a `checkpoints/` directory in your project root (if it doesn't exist):
-
-```
-mkdir checkpoints
-```
-
-Download the small model checkpoint from the official release:
-
-- [sam2.1_hiera_small.pt](https://github.com/facebookresearch/sam2/releases/download/v1.0.0/sam2.1_hiera_small.pt)
-
-Save the downloaded file to your `checkpoints/` directory:
-
-```
-mv sam2.1_hiera_small.pt checkpoints/
-```
 
 1. **Clone the repository:**
 
@@ -76,13 +51,43 @@ mv sam2.1_hiera_small.pt checkpoints/
 
    > **Note:** You may need to install OpenPose and ByteTrack separately. See their official documentation for setup.
 
-   > **Note:** SAM 2 must be installed and the checkpoint downloaded as described above for SAM 2.1 analysis features to work.
+4. **SAM 2 Installation**
 
-4. **Download YOLOv8 model weights:**
+   #### a. Install SAM 2 (Segment Anything Model v2)
+
+   Follow the official instructions from Facebook Research:
+
+   ```bash
+   git clone https://github.com/facebookresearch/sam2.git
+   cd sam2
+   pip install -e .
+   ```
+
+   See the [SAM 2 GitHub page](https://github.com/facebookresearch/sam2) for details and troubleshooting.
+
+   #### b. Download SAM 2.1 Small Model Checkpoint
+
+   Create a `checkpoints/` directory in your project root (if it doesn't exist):
+
+   ```bash
+   mkdir checkpoints
+   ```
+
+   Download the small model checkpoint from the official release:
+
+   - [sam2.1_hiera_small.pt](https://github.com/facebookresearch/sam2/releases/download/v1.0.0/sam2.1_hiera_small.pt)
+
+   Save the downloaded file to your `checkpoints/` directory:
+
+   ```bash
+   mv sam2.1_hiera_small.pt checkpoints/
+   ```
+
+5. **Download YOLOv8 model weights:**
 
    - Place your YOLOv8 weights (e.g., `yolov8x.pt`) in the `models/` directory.
 
-5. **Set up OpenPose:**
+6. **Set up OpenPose:**
    - Download and install OpenPose from [https://github.com/CMU-Perceptual-Computing-Lab/openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
    - Ensure `OpenPoseDemo.exe` is available at `openpose/bin/OpenPoseDemo.exe` (or update the path in `pose_estimation.py`)
 

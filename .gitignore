@@ -18,6 +18,10 @@ temp/
 runs/
 outputs/
 checkpoints/
+eval_infer_bytetrack/
+eval_infer_sam2/
 
 # Utilities
 openpose/
+eval_bytetrack.py
+eval_sam2.py
